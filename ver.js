@@ -3,10 +3,10 @@ const fs = require('fs')
 
 const { execSync } = require('child_process');
 
-const incFile = fs
+const versionsFile = fs
   .readFileSync(path.resolve(__dirname, 'increment'), { encoding: 'utf-8' })
 
-const versionsToUpgrade = incFile
+const versionsToUpgrade = versionsFile
   .split('\n')
   .filter(vl => vl)
   .map(versionLine => {
